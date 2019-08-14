@@ -37,7 +37,7 @@ public class AwsRekognitionService {
 
     public DetectFacesResult detectFacesResult(MultipartFile imageToCheck) throws IOException {
         DetectFacesRequest request = new DetectFacesRequest()
-                .withImage(new Image().withBytes(ByteBuffer.wrap(imageToCheck.getBytes())));
+                .withImage(new Image().withBytes(ByteBuffer.wrap(imageToCheck.getBytes()))).withAttributes(Attribute.ALL);
 
         return client.detectFaces(request);
     }

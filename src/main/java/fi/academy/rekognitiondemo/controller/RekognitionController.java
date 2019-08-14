@@ -23,7 +23,7 @@ public class RekognitionController {
     public ResponseEntity<DetectLabelsResult> test() {
         return ResponseEntity.ok(awsRekognitionService.test());
     }
-    
+
     @PostMapping("/images/moderation-labels")
     public Object detectModerationLabels(@RequestParam MultipartFile image) throws IOException {
         return ResponseEntity.ok(awsRekognitionService.detectModerationLabels(image));
